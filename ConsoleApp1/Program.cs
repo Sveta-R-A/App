@@ -10,3 +10,10 @@ builder.WebHost.ConfigureKestrel(options =>
 {
     options.ListenAnyIP(Int32.Parse(port));
 });
+var app = builder.Build();
+
+
+app.MapGet("/hello", () => "Hello, world!");
+
+
+app.Run();
